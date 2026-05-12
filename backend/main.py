@@ -1,4 +1,5 @@
 from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware
 
 from backend.services.file_reader import read_code_files
 from backend.services.chunker import chunk_code
@@ -10,6 +11,14 @@ from backend.services.llm_service import generate_response
 from backend.services.repo_loader import clone_github_repo
 
 app = FastAPI()
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 # sneh
 
 
