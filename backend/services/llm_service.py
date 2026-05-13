@@ -1,7 +1,11 @@
+import os
 from groq import Groq
+from dotenv import load_dotenv
+
+load_dotenv()
 
 client = Groq(
-    api_key="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"
+    api_key=os.environ.get("GROQ_API_KEY")
 )
 
 
