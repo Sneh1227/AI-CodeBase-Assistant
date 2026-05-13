@@ -9,6 +9,7 @@ from backend.services.embedder import generate_query_embedding
 from backend.services.vector_db import search_similar_chunks
 from backend.services.llm_service import generate_response
 from backend.services.repo_loader import clone_github_repo
+import streamlit as st
 
 app = FastAPI()
 
